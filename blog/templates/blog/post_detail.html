@@ -1,3 +1,7 @@
+<div class="body">
+    {{ objects.content|linebreaks}}
+</div>
+
 <h2>{{ object.title }}</h2>
 
 <p>
@@ -22,8 +26,8 @@
 </div>
 <br>
 <div>
-    <b>TAGS</b><i class="fas fa-tag"></i>
-    {% load taggit_templatetag2_tags %}
+    <b>TAGS</b> <i class="fas fa-tag"></i>
+    {% load taggit_templatetags2_tags %}
     {% get_tags_for_object object as "tags" %}
     {% for tag in tags %}
     <a href="{% url 'blog:tagged_object_list' tag.name %}">{{ tag.name }}</a>
